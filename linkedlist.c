@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 struct node {
     int value;
@@ -21,19 +22,28 @@ void printLinkedList(node* head) {
 int main(int argc, char* argv[]) {
     struct node* head = NULL;
 
-    head = malloc(sizeof(node));
+    head = malloc(sizeof(struct node));
     head->value = 1; 
     head->next = NULL;    
 
     //TODO: add a node with value 2 at the end of the linked list
-    head->next = malloc(sizeof(node));
+    head->next = malloc(sizeof(struct node));
     head->next->value = 2;
     head->next->next = NULL;
 
     //TODO: add a node with value 0 at the beginning of the linked list 
-    struct node* temp = malloc(sizeof(node));
+    struct node* temp = malloc(sizeof(struct node));
     temp->value = 0;
     temp->next = head;
     head = temp;
     free(temp);
+
+    printLinkedList(head);
+    
+    //TODO: free the memory used by the linked list
+    while (head != NULL) {
+        struct node* prev = head;
+        head = head->next;
+        free(prev);
+    }
 } 
