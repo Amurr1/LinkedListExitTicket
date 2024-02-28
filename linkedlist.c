@@ -9,8 +9,7 @@ struct node {
 // 02/28 exit ticket
 void printLinkedList(struct node* head) {
     //TODO: print the values in the linked list, e.g. 0->1->2
-    struct node* current = NULL;
-    current->head;
+    struct node* current = head
     while (current != NULL) {
         printf("%d", current->value);
         if (current->next != NULL) {
