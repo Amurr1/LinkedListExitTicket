@@ -7,7 +7,7 @@ struct node {
 };
 
 // 02/28 exit ticket
-void printLinkedList(node* head) {
+void printLinkedList(struct node* head) {
     //TODO: print the values in the linked list, e.g. 0->1->2
     node* current = head;
     while (current != NULL) {
